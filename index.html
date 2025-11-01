@@ -441,19 +441,7 @@
             gap: 0.5rem;
         }
 
-        .company-link {
-            font-size: 0.875rem;
-            color: var(--text-tertiary);
-            text-decoration: none;
-            transition: all 0.2s ease;
-            opacity: 0.6;
-        }
 
-        .company-link:hover {
-            color: var(--primary);
-            opacity: 1;
-            transform: translateY(-1px);
-        }
 
 
 
@@ -885,7 +873,6 @@
                 <div class="experience-header">
                     <h3 class="experience-company">
                         <span>Tessell</span>
-                        <a href="https://www.tessell.com" class="company-link" title="Visit Tessell" target="_blank">🔗</a>
                     </h3>
                     <p class="experience-title">SDE 3 | Infra and Platforms</p>
                     <p class="experience-date">May 2023 - Present · 1 yr 8 mos</p>
@@ -907,7 +894,6 @@
                 <div class="experience-header">
                     <h3 class="experience-company">
                         <span>Microsoft</span>
-                        <a href="https://www.microsoft.com" class="company-link" title="Visit Microsoft" target="_blank">🔗</a>
                     </h3>
                     <p class="experience-title">Software Engineer | Data Platform</p>
                     <p class="experience-date">Aug 2021 - May 2023 · 1 yr 10 mos</p>
@@ -926,7 +912,6 @@
                 <div class="experience-header">
                     <h3 class="experience-company">
                         <span>Amazon</span>
-                        <a href="https://www.amazon.com" class="company-link" title="Visit Amazon" target="_blank">🔗</a>
                     </h3>
                     <p class="experience-title">Software Engineer Intern | Prime Marketing</p>
                     <p class="experience-date">Jan 2021 - Jul 2021 · 7 mos</p>
@@ -943,7 +928,6 @@
                 <div class="experience-header">
                     <h3 class="experience-company">
                         <span>Postman</span>
-                        <a href="https://www.postman.com" class="company-link" title="Visit Postman" target="_blank">🔗</a>
                     </h3>
                     <p class="experience-title">Software Engineer Intern | Version Control</p>
                     <p class="experience-date">Nov 2020 - Jan 2021 · 3 mos</p>
@@ -1041,7 +1025,7 @@
     <!-- Achievements Section -->
     <section id="achievements" class="section">
         <div class="section-header">
-            <p class="section-label">05. Competitive Programming</p>
+            <p class="section-label">05. What I've Achieved</p>
             <h2 class="section-title">Achievements</h2>
         </div>
         <div class="achievements-grid">
@@ -1145,8 +1129,15 @@
         const themeToggle = document.querySelector('.theme-toggle');
         const html = document.documentElement;
 
-        // Check for saved theme preference or default to 'dark'
-        const currentTheme = localStorage.getItem('theme') || 'dark';
+        // Check for saved theme preference or default to browser preference
+        const getDefaultTheme = () => {
+            if (localStorage.getItem('theme')) {
+                return localStorage.getItem('theme');
+            }
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        };
+
+        const currentTheme = getDefaultTheme();
         html.setAttribute('data-theme', currentTheme);
         themeToggle.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
 
