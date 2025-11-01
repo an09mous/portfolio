@@ -441,6 +441,18 @@
             gap: 0.5rem;
         }
 
+        .experience-description a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border-bottom: 1px solid transparent;
+        }
+
+        .experience-description a:hover {
+            color: var(--primary);
+            border-bottom: 1px solid var(--primary);
+        }
+
 
 
 
@@ -470,15 +482,17 @@
             color: var(--text-secondary);
             font-size: 0.95rem;
             line-height: 1.6;
-            display: flex;
-            gap: 0.75rem;
+            position: relative;
+            padding-left: 1.5rem;
         }
 
         .experience-description li::before {
             content: "▹";
             color: var(--primary);
             font-size: 1.2rem;
-            flex-shrink: 0;
+            position: absolute;
+            left: 0;
+            top: 0;
         }
 
 
@@ -879,13 +893,17 @@
                     <p class="experience-date">Bangalore, India</p>
                 </div>
                 <ul class="experience-description">
-                    <li>Built Hosted Control Plane deployment model enabling highly secure, air-gapped deployments for government and financial enterprises, securing multi-million-dollar deals</li>
-                    <li>Rearchitected monitoring and alerting infrastructure achieving 99.999% availability, 10K writes/s scalability, multi-tenancy, and 90% cost reduction</li>
-                    <li>Led team of 5 engineers to build automated native backup scheduling and point-in-time recovery for Oracle DB services with 0 data loss</li>
-                    <li>Built intelligent alerts with automated RCA generation using Gen AI (RAG), saving on-call engineers 10-20 minutes per incident</li>
+                    <li>Built <a href="https://www.tessell.com/blogs/tessell-hosting-choices#:~:text=model%20(explained%20later).-,Hosted%20by%20the%20Customer,-Even%20with%20the" target="_blank">Hosted Control Plane</a> deployment model to enable highly secure, air-gapped deployment of the Tessell Control Plane, enabling adoption by government and financial enterprises and securing multi-million-dollar enterprise deals</li>
+                    <li>Rearchitected monitoring and alerting for tessell control plane and data plane, achieving 99.999% availability,
+                    10K writes/s scalability, multi-tenancy, robust security, and 90% lower cost than industry alternatives</li>
+                    <li>Led a team of 5 engineers to build automated native backup scheduling and point-in-time recovery for Oracle
+                    DB services — ensuring 0 data loss. and strict SLA adherence</li>
+                    <li>Built <a href="https://docs.tessell.com/tessell/db_services/my_services/relational_databases/db_service_home_page/monitoring" target="_blank">advanced monitoring</a> and <a href="https://help.tessell.com/en/articles/9144200-what-performance-insights-does-tessell-provide" target="_blank">performance insights</a> for the Tessell db services.</li>
                     <li>Rearchitected Azure control plane networking layer, making it 100% private and optimizing costs by 90%</li>
                     <li>Built Multi-Factor Authentication for Tessell console, enhancing enterprise security and regulatory compliance</li>
-                    <li>Built Oracle Cloud onboarding flow (BYOC) to seamlessly onboard customer's OCI accounts</li>
+                    <li>Built <a href="https://www.tessell.com/tessell-for-oracle-on-oci", target="_blank">Oracle Cloud onboarding flow (BYOC)</a> to seamlessly onboard customer's OCI accounts</li>
+                    <li>Proactively reduced operational overhead across Tessell by automating manual processes through AI-driven
+                    solutions and scripting</li>
                 </ul>
             </div>
 
@@ -1120,7 +1138,7 @@
             </a>
         </div>
         <p class="footer-text">
-            Designed & Built by Shivam Saxena © 2024
+            Designed & Built by Shivam Saxena © 2025
         </p>
     </footer>
 
